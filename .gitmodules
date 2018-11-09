@@ -1,0 +1,6 @@
+[submodule "cpp/libraries/json"]
+	path = cpp/libraries/json
+	url = https://github.com/nlohmann/json.git
+[submodule "cpp/libraries/NFParam"]
+	path = cpp/libraries/NFParam
+	url = https://github.com/spotify/NFParam.git

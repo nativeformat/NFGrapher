@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/main",
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": false,
+    "pretty": true,
+    "lib": ["es2017"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/**", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}

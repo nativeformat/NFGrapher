@@ -1,0 +1,769 @@
+{
+  "version": "1.2.0",
+  "pluginDefs": [
+    {
+      "kind": "com.nativeformat.plugin.eq.eq3band",
+      "description": "A 3-band EQ consisting of a low shelf, a mid-range peaking filter, and high shelf. The gain and cutoff or center frequency of each section are controlled by audio parameters.",
+      "paramDefs": [
+        {
+          "name": "lowCutoff",
+          "kind": "audio",
+          "initialValue": 264.0,
+          "description": "An audio parameter specifying the cutoff frequency (Hz) for the low shelf filter, below which the lowGain will be applied."
+        },
+        {
+          "name": "midFrequency",
+          "kind": "audio",
+          "initialValue": 1000.0,
+          "description": "An audio parameter specifying the center frequency (Hz) of the peq filter, at which midGain will be applied."
+        },
+        {
+          "name": "highCutoff",
+          "kind": "audio",
+          "initialValue": 3300.0,
+          "description": "An audio parameter specifying the cutoff frequency for the high shelf filter, above which the highGain will be applied."
+        },
+        {
+          "name": "lowGain",
+          "kind": "audio",
+          "initialValue": 0.0,
+          "description": "An audio parameter specifying the gain (dB) for the low shelf."
+        },
+        {
+          "name": "midGain",
+          "kind": "audio",
+          "initialValue": 0.0,
+          "description": "An audio parameter specifying the gain (dB) for the mid range filter."
+        },
+        {
+          "name": "highGain",
+          "kind": "audio",
+          "initialValue": 0.0,
+          "description": "An audio parameter specifying the gain (dB) for the high shelf."
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.file.file",
+      "description": "A plugin that plays different types of media files.",
+      "configDefs": [
+        {
+          "name": "file",
+          "kind": "string",
+          "description": "Tells the plugin where to pull the file from, it supports both local files and HTTP based files.<br>Possible string formats:</br><br>- File: `<absolute-path-to-file>`</br><br>- Streamable Audio: `<HTTP(s)-URL>`</br><br>- Spotify Track: `spotify:track:<uri>`</br><br>- MIDI File: `midi:<absolute-path-to-midi-file>:soundfont:<absolute-path-to-soundfont-file>`"
+        },
+        {
+          "name": "when",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin when to start playing the file."
+        },
+        {
+          "name": "duration",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin how long to play the file for."
+        },
+        {
+          "name": "offset",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin where within the track playback should begin."
+        }
+      ],
+      "portDefs": {
+        "input": [
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.noise.noise",
+      "description": "A plugin that outputs noise.",
+      "configDefs": [
+        {
+          "name": "when",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin when to start producing noise."
+        },
+        {
+          "name": "duration",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin for how long to produce noise."
+        }
+      ],
+      "portDefs": {
+        "input": [
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.noise.silence",
+      "description": "A plugin that outputs silence.",
+      "configDefs": [
+        {
+          "name": "when",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin when to start producing silence."
+        },
+        {
+          "name": "duration",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "Tells the plugin for how long to produce silence."
+        }
+      ],
+      "portDefs": {
+        "input": [
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.time.loop",
+      "description": "A plugin that loops an audio stream.",
+      "configDefs": [
+        {
+          "name": "when",
+          "kind": "time",
+          "description": "Describes when the plugin should begin looping."
+        },
+        {
+          "name": "duration",
+          "kind": "time",
+          "description": "Describes the duration of the loop."
+        },
+        {
+          "name": "loopCount",
+          "kind": "int",
+          "defaultValue": -1,
+          "description": "Describes the total number of loops. -1 loops infinitely."
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.time.stretch",
+      "description": "A plugin that can independently stretch time and shift the pitch of an audio stream.",
+      "paramDefs": [
+        {
+          "name": "pitchRatio",
+          "kind": "audio",
+          "initialValue": 1.0,
+          "description": "An audio parameter specifying the pitch multiplier. For example, a pitchRatio value of 2.0 will double the original audio frequencies. "
+        },
+        {
+          "name": "stretch",
+          "kind": "audio",
+          "initialValue": 1.0,
+          "description": "An audio parameter specifying the time stretch multiplier. For example, a stretch value of 2.0 will make audio play at half the original speed."
+        },
+        {
+          "name": "formantRatio",
+          "kind": "audio",
+          "initialValue": 1.0,
+          "description": "An audio parameter specifying the formant envelope multiplier. If the formantRatio is equal to the pitchRatio, formant-preserving pitch shifting will be performed."
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.waa.delay",
+      "description": "A plugin that controls delay time.",
+      "paramDefs": [
+        {
+          "name": "delayTime",
+          "kind": "audio",
+          "initialValue": 0.0,
+          "description": "An audio parameter controlling the current delay time on the node."
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.waa.gain",
+      "description": "A plugin that manipulates the volume of an audio stream.",
+      "paramDefs": [
+        {
+          "name": "gain",
+          "kind": "audio",
+          "initialValue": 1.0,
+          "description": "An audio parameter specifying the amplitude multiplier for the input signal."
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.wave.sine",
+      "description": "A plugin that generates sine wave signals.",
+      "configDefs": [
+        {
+          "name": "frequency",
+          "kind": "float",
+          "defaultValue": 0,
+          "description": "The frequency to generate the sine wave at."
+        },
+        {
+          "name": "when",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "When to start playing the wave."
+        },
+        {
+          "name": "duration",
+          "kind": "time",
+          "defaultValue": 0,
+          "description": "The total duration of playback."
+        }
+      ],
+      "portDefs": {
+        "input": [
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.eq.filter",
+      "description": "A filter that attenuates low and/or high frequencies",
+      "paramDefs": [
+        {
+          "name": "lowCutoff",
+          "kind": "audio",
+          "initialValue": 0.0,
+          "description": "An audio parameter specifying the low cutoff frequency (Hz). Only used for high-pass and band-pass filters."
+        },
+        {
+          "name": "highCutoff",
+          "kind": "audio",
+          "initialValue": 22050.0,
+          "description": "An audio parameter specifying the high cutoff frequency (Hz). Only used for low-pass and band-pass filters."
+        }
+      ],
+      "configDefs": [
+        {
+          "name": "filterType",
+          "kind": "string",
+          "description": "The type of filter to create. A lowPass filter attenuates frequencies above highCutoff. A highPass filter attenuates frequencies below lowCutoff. A bandPass filter does both.",
+          "defaultValue": "bandPass",
+          "possibleValues": [
+            "lowPass",
+            "highPass",
+            "bandPass"
+          ]
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.compressor.compressor",
+      "description": "A plugin that performs dynamic range compression on an audio stream.",
+      "paramDefs": [
+        {
+          "name": "thresholdDb",
+          "kind": "audio",
+          "initialValue": -24.0,
+          "description": "An audio parameter specifying the threshold (in dB) at which compression will start."
+        },
+        {
+          "name": "kneeDb",
+          "kind": "audio",
+          "initialValue": 30.0,
+          "description": "An audio parameter specifying the range (in dB) above the threshold at which point the compression curve transitions to the ratio portion."
+        },
+        {
+          "name": "ratioDb",
+          "kind": "audio",
+          "initialValue": 12.0,
+          "description": "An audio parameter specifying the amount of dB change from input to 1 dB of output."
+        },
+        {
+          "name": "attack",
+          "kind": "audio",
+          "initialValue": 0.0003,
+          "description": "An audio parameter specifying the amount time till the compressor starts reducing the gain."
+        },        {
+          "name": "release",
+          "kind": "audio",
+          "initialValue": 0.25,
+          "description": "An audio parameter specifying the amount time till the compressor starts increasing the gain."
+        }
+      ],
+      "configDefs": [
+        {
+          "name": "detectionMode",
+          "kind": "string",
+          "description": "The signal level detection algorithm to use. Possible values are 'max' and 'rms' (root mean square). This configuration is case-sensitive. Any specified configuration not matching 'max' or 'rms' will be automatically set to 'max'.",
+          "defaultValue": "max",
+          "possibleValues": [
+            "max",
+            "rms"
+          ]
+        },
+        {
+          "name": "kneeMode",
+          "kind": "string",
+          "description": "The shape of the knee in the compression function. Possible values are hard and soft. This configuration is case-sensitive. Any specified configuration not matching 'hard' or 'soft' will be automatically set to 'hard'.",
+          "defaultValue": "hard",
+          "possibleValues": [
+            "hard",
+            "soft"
+          ]
+        },
+        {
+          "name": "cutoffs",
+          "kind": "list(float)",
+          "description": "A list of cutoff frequencies in Hz for multiband compression. If the list is empty, no band splitting will be performed.",
+          "defaultValue": []
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          },
+          {
+            "name": "sidechain",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Sidechain input."
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.compressor.expander",
+      "description": "A plugin that performs dynamic range expansion on an audio stream.",
+      "paramDefs": [
+        {
+          "name": "thresholdDb",
+          "kind": "audio",
+          "initialValue": -24.0,
+          "description": "An audio parameter specifying the threshold (in dB) at which expansion will start."
+        },
+        {
+          "name": "kneeDb",
+          "kind": "audio",
+          "initialValue": 30.0,
+          "description": "An audio parameter specifying the range (in dB) above the threshold at which point the expansion curve transitions to the ratio portion."
+        },
+        {
+          "name": "ratioDb",
+          "kind": "audio",
+          "initialValue": 12.0,
+          "description": "An audio parameter specifying the amount of dB change from input to 1 dB of output."
+        },
+        {
+          "name": "attack",
+          "kind": "audio",
+          "initialValue": 0.0003,
+          "description": "An audio parameter specifying the amount time till the expander starts reducing the gain."
+        },        {
+          "name": "release",
+          "kind": "audio",
+          "initialValue": 0.25,
+          "description": "An audio parameter specifying the amount time till the expander starts increasing the gain."
+        }
+      ],
+      "configDefs": [
+        {
+          "name": "detectionMode",
+          "kind": "string",
+          "description": "The signal level detection algorithm to use. Possible values are 'max' and 'rms' (root mean square). This configuration is case-sensitive. Any specified configuration not matching 'max' or 'rms' will be automatically set to 'max'.",
+          "defaultValue": "max",
+          "possibleValues": [
+            "max",
+            "rms"
+          ]
+        },
+        {
+          "name": "kneeMode",
+          "kind": "string",
+          "description": "The shape of the knee in the expansion function. Possible values are hard and soft. This configuration is case-sensitive. Any specified configuration not matching 'hard' or 'soft' will be automatically set to 'hard'.",
+          "defaultValue": "hard",
+          "possibleValues": [
+            "hard",
+            "soft"
+          ]
+        },
+        {
+          "name": "cutoffs",
+          "kind": "list(float)",
+          "description": "A list of cutoff frequencies in Hz for multiband expansion. If the list is empty, no band splitting will be performed.",
+          "defaultValue": []
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          },
+          {
+            "name": "sidechain",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Sidechain input."
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    },
+    {
+      "kind": "com.nativeformat.plugin.compressor.compander",
+      "description": "A plugin that performs dynamic range compansion (compression + expansion) on an audio stream.",
+      "paramDefs": [
+        {
+          "name": "compressorThresholdDb",
+          "kind": "audio",
+          "initialValue": -24.0,
+          "description": "An audio parameter specifying the threshold (in dB) at which compression will start."
+        },
+        {
+          "name": "compressorKneeDb",
+          "kind": "audio",
+          "initialValue": 30.0,
+          "description": "An audio parameter specifying the range (in dB) above the threshold at which point the compression curve transitions to the ratio portion."
+        },
+        {
+          "name": "compressorRatioDb",
+          "kind": "audio",
+          "initialValue": 12.0,
+          "description": "An audio parameter specifying the amount of dB change from input to 1 dB of output in the compressor."
+        },
+        {
+          "name": "expanderThresholdDb",
+          "kind": "audio",
+          "initialValue": -24.0,
+          "description": "An audio parameter specifying the threshold (in dB) at which expansion will start."
+        },
+        {
+          "name": "expanderKneeDb",
+          "kind": "audio",
+          "initialValue": 30.0,
+          "description": "An audio parameter specifying the range (in dB) above the threshold at which point the expansion curve transitions to the ratio portion."
+        },
+        {
+          "name": "expanderRatioDb",
+          "kind": "audio",
+          "initialValue": 12.0,
+          "description": "An audio parameter specifying the amount of dB change from input to 1 dB of output in the expander."
+        },
+        {
+          "name": "attack",
+          "kind": "audio",
+          "initialValue": 0.0003,
+          "description": "An audio parameter specifying the amount time till the compander starts reducing the gain."
+        },        {
+          "name": "release",
+          "kind": "audio",
+          "initialValue": 0.25,
+          "description": "An audio parameter specifying the amount time till the compander starts increasing the gain."
+        }
+      ],
+      "configDefs": [
+        {
+          "name": "detectionMode",
+          "kind": "string",
+          "description": "The signal level detection algorithm to use. Possible values are 'max' and 'rms' (root mean square). This configuration is case-sensitive. Any specified configuration not matching 'max' or 'rms' will be automatically set to 'max'.",
+          "defaultValue": "max",
+          "possibleValues": [
+            "max",
+            "rms"
+          ]
+        },
+        {
+          "name": "kneeMode",
+          "kind": "string",
+          "description": "The shape of the knee in the compression function. Possible values are hard and soft. This configuration is case-sensitive. Any specified configuration not matching 'hard' or 'soft' will be automatically set to 'hard'.",
+          "defaultValue": "hard",
+          "possibleValues": [
+            "hard",
+            "soft"
+          ]
+        },
+        {
+          "name": "cutoffs",
+          "kind": "list(float)",
+          "description": "A list of cutoff frequencies in Hz for multiband compression. If the list is empty, no band splitting will be performed.",
+          "defaultValue": []
+        }
+      ],
+      "portDefs": {
+        "input": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio input.",
+            "isDefault": true
+          },
+          {
+            "name": "sidechain",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Sidechain input."
+          }
+        ],
+        "output": [
+          {
+            "name": "audio",
+            "kind": "com.nativeformat.content.audio",
+            "description": "Audio output.",
+            "isDefault": true
+          }
+        ]
+      }
+    }
+  ],
+
+  "paramKindDefs": [
+    {
+      "kind": "audio",
+      "valueKind": "float",
+      "description": "A float value that can change over time.",
+      "commandDefs": [
+        {
+          "name": "setValueAtTime",
+          "description": "Sets the value of this param at the given start time.",
+          "argDefs": [
+            {
+              "name": "value",
+              "kind": "float",
+              "description": "The desired value."
+            },
+            {
+              "name": "startTime",
+              "kind": "time",
+              "description": "The time the value should be set."
+            }
+          ]
+        },
+        {
+          "name": "linearRampToValueAtTime",
+          "description": "Linearly interpolates the param from its current value to the give value at the given time.",
+          "argDefs": [
+            {
+              "name": "value",
+              "kind": "float",
+              "description": "The desired value."
+            },
+            {
+              "name": "endTime",
+              "kind": "time",
+              "description": "The time at which this param should have the given value."
+            }
+          ]
+        },
+        {
+          "name": "exponentialRampToValueAtTime",
+          "description": "Exponentially interpolates the param from its current value to the give value at the given time.",
+          "argDefs": [
+            {
+              "name": "value",
+              "kind": "float",
+              "description": "The desired value."
+            },
+            {
+              "name": "endTime",
+              "kind": "time",
+              "description": "The time at which this param should have the given value."
+            }
+          ]
+        },
+        {
+          "name": "setTargetAtTime",
+          "description": "Specifies a target to reach starting at a given time and gives a constant with which to guide the curve along.",
+          "argDefs": [
+            {
+              "name": "target",
+              "kind": "float",
+              "description": "The target value to reach."
+            },
+            {
+              "name": "startTime",
+              "kind": "time",
+              "description": "The starting time."
+            },
+            {
+              "name": "timeConstant",
+              "kind": "float",
+              "description": "A constant to guide the curve."
+            }
+          ]
+        },
+        {
+          "name": "setValueCurveAtTime",
+          "description": "Specifies a curve to render based on the given float values.",
+          "argDefs": [
+            {
+              "name": "values",
+              "kind": "list(float)",
+              "description": "The curve values."
+            },
+            {
+              "name": "startTime",
+              "kind": "time",
+              "description": "The starting time."
+            },
+            {
+              "name": "duration",
+              "kind": "time",
+              "description": "The duration of the curve."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "name": "nf-gen-ts",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "pregenerate": "quicktype --src-lang schema --src ../../score-schema.json --lang ts --out src/defs.generated.ts --just-types",
+    "generate": "ts-node src/index",
+    "generate:typescript": "npm run generate -- -l typescript -o ../../js/src/",
+    "generate:cpp": "npm run generate -- -l cpp -o ../../cpp",
+    "generate:java": "npm run generate -- -l java -o ../../java/src/main/java",
+    "generate:swift": "npm run generate -- -l swift -o ../../swift",
+    "generate:doc": "npm run generate -- -l doc -o ../../doc",
+    "generate:python": "npm run generate -- -l python -o ../../python/nf_grapher",
+    "generate:all": "npm run generate:typescript && npm run generate:cpp && npm run generate:java && npm run generate:swift && npm run generate:python && npm run generate:doc",
+    "postinstall": "npm run pregenerate"
+  },
+  "author": "Jose Falcon <chedkid@gmail.com>",
+  "contributors": [
+    {
+      "name": "Jose Falcon",
+      "email": "chedkid@gmail.com"
+    },
+    {
+      "name": "Julia Astrauckas",
+      "email": "julia.louise.cox@gmail.com"
+    },
+    {
+      "name": "Justin Windle",
+      "email": "justin@soulwire.co.uk"
+    },
+    {
+      "name": "Noah Hilt",
+      "email": "noeski@gmail.com"
+    },
+    {
+      "name": "Drew Petersen",
+      "email": "kirbysayshi@gmail.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "buildDependencies": {
+    "google-java-format-1.5-all-deps.jar": "https://github.com/google/google-java-format/releases/download/google-java-format-1.5/google-java-format-1.5-all-deps.jar",
+    "swiftlint": "https://github.com/realm/SwiftLint/releases/download/0.25.0/portable_swiftlint.zip",
+    "yapf-0.22.0": "https://github.com/google/yapf/archive/v0.22.0.zip"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.4.0",
+    "@types/extract-zip": "^1.6.2",
+    "@types/json-schema": "^6.0.0",
+    "@types/lodash": "^4.14.104",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^9.4.6",
+    "@types/prettier": "^1.10.0",
+    "@types/request": "^2.47.0",
+    "extract-zip": "^1.6.6",
+    "husky": "^0.14.3",
+    "license-check-and-add": "^2.3.6",
+    "request": "^2.88.0",
+    "ts-node": "^5.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.9.0",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "@types/find-up": "^2.1.1",
+    "case": "^1.5.4",
+    "commander": "^2.14.1",
+    "common-tags": "^1.7.2",
+    "find-up": "^3.0.0",
+    "lodash": "^4.17.5",
+    "markdown-toc": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "option-t": "^16.1.1",
+    "prettier": "^1.11.0",
+    "quicktype": "^9.0.25"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "license-check-and-add-config": {
+    "folder": "../../",
+    "license": "./license-header.txt",
+    "exact_paths_method": "INCLUDE",
+    "exact_paths": [
+      "tools/nf-gen-ts/src",
+      "js/src"
+    ],
+    "file_type_method": "INCLUDE",
+    "file_types": [
+      ".ts",
+      ".js"
+    ],
+    "license_formats": {
+      "ts|js": {
+        "eachLine": {
+          "prepend": "// "
+        }
+      }
+    },
+    "insert_license": true
+  }
+}

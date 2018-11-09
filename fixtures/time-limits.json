@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "graph": {
+    "id": "3f0461c7-70d5-4769-af93-776619cecafc",
+    "nodes": [
+      {
+        "id": "b81c2ae8-4035-4563-9b21-88d10addfe35",
+        "kind": "com.nativeformat.plugin.wave.sine",
+        "config": {
+          "frequency": 1.234,
+          "when": 9223372036854775807,
+          "duration": 9223372036854775807
+        },
+        "params": {}
+      }
+    ]
+  }
+}

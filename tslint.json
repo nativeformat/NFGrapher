@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "member-ordering": [true, { "order": "fields-first" }],
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": false,
+    "no-trailing-whitespace": true,
+    "no-submodule-imports": false,
+    "no-shadowed-variable": false,
+    "ordered-imports": false,
+    "interface-name": false,
+    "no-console": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon": [true, "always"]
+  }
+}

@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'xcodeproj'
+
+task :xcodeproj do
+  system "swift package generate-xcodeproj --output ."
+
+  project = Xcodeproj::Project.open(Dir["*.xcodeproj"].first)
+  project.build_configurations.each { |config|
+    config.build_settings["SDKROOT"] = "iphoneos"
+    config.build_settings["IPHONEOS_DEPLOYMENT_TARGET"] = "10.0"
+    config.build_settings["SUPPORTED_PLATFORMS"] = "iphonesimulator iphoneos macosx"
+  }
+  
+  target = project.targets.select {|t|t.name=="GrapherTests"}.first
+  group = project.main_group.new_group("fixtures", "../fixtures", :project)
+  
+  Dir.foreach("../fixtures") do |fixture|
+    next if fixture == '.' or fixture == '..'
+
+    file = group.new_file(fixture)
+    target.add_resources([file])
+  end
+  
+  project.save
+
+end

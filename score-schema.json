@@ -1,0 +1,407 @@
+{
+  "$ref": "#/definitions/NotARealMessageOnlyExistsForCodeGenerationHelp",
+  "definitions": {
+    "NotARealMessageOnlyExistsForCodeGenerationHelp": {
+      "type": "object",
+      "properties": {
+        "contractDef": {
+          "$ref": "#/definitions/contract/definitions/ContractDef"
+        },
+        "score": {
+          "$ref": "#/definitions/score/definitions/Score"
+        }
+      }
+    },
+
+    "score": {
+      "description": "This section defines the schema of a Native Format Score",
+
+      "definitions": {
+        "Score": {
+          "type": "object",
+          "properties": {
+            "graph": {
+              "$ref": "#/definitions/score/definitions/Graph"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "graph",
+            "version"
+          ],
+          "title": "score"
+        },
+        "Graph": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "loadingPolicy" : {
+              "$ref": "#/definitions/score/definitions/LoadingPolicy"
+            },
+            "nodes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/score/definitions/Node"
+              }
+            },
+            "edges": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/score/definitions/Edge"
+              }
+            },
+            "scripts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/score/definitions/Script"
+              }
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "title": "graph"
+        },
+        "Script": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "code"
+          ],
+          "title": "script"
+        },
+        "Edge": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "sourcePort": {
+              "type": "string"
+            },
+            "targetPort": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "source",
+            "target"
+          ],
+          "dependencies": {
+            "sourcePort": [
+              "targetPort"
+            ],
+            "targetPort": [
+              "sourcePort"
+            ]
+          },
+          "title": "edge"
+        },
+        "Node": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "loadingPolicy" : {
+              "$ref": "#/definitions/score/definitions/LoadingPolicy"
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/score/definitions/Command"
+                }
+              }
+            },
+            "config": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "id",
+            "kind"
+          ],
+          "title": "node"
+        },
+        "Command": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "args": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "command"
+        },
+        "LoadingPolicy": {
+          "type": "string",
+          "enum": [
+            "someContentPlaythrough",
+            "allContentPlaythrough"
+          ],
+          "default": "allContentPlaythrough"
+        }
+      }
+    },
+
+    "contract": {
+      "description": "This section defines the schema of a Score contract",
+
+      "definitions": {
+        "ContractDef": {
+          "type": "object",
+          "properties": {
+            "pluginDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/PluginDef"
+              }
+            },
+            "paramKindDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/ParamKindDef"
+              }
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pluginDefs",
+            "paramKindDefs",
+            "version"
+          ],
+          "title": "contractDef"
+        },
+        "PluginDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "configDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/ArgDef"
+              }
+            },
+            "portDefs": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "input": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/contract/definitions/ContentDef"
+                  }
+                },
+                "output": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/contract/definitions/ContentDef"
+                  }
+                }
+              }
+            },
+            "paramDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/ParamDef"
+              }
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "title": "pluginDef"
+        },
+        "ParamDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "initialValue": {
+              "$ref": "#/definitions/contract/definitions/ValueKind"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "kind",
+            "initialValue"
+          ],
+          "title": "paramDef"
+        },
+        "ParamKindDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "valueKind": {
+              "$ref": "#/definitions/contract/definitions/ValueKind"
+            },
+            "description": {
+              "type": "string"
+            },
+            "commandDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/CommandDef"
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "valueKind"
+          ],
+          "title": "paramKindDef"
+        },
+        "CommandDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "argDefs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/contract/definitions/ArgDef"
+              }
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "commandDef"
+        },
+        "ArgDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "kind": {
+              "$ref": "#/definitions/contract/definitions/ValueKind"
+            },
+            "defaultValue": {
+              "type": ["number", "array", "boolean", "string", "object"]
+            },
+            "possibleValues" : {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "name",
+            "kind"
+          ],
+          "title": "argDef"
+        },
+        "ContentDef": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "isDefault": {
+              "type": "boolean"
+            },
+            "kind": {
+              "$ref": "#/definitions/contract/definitions/ContentType"
+            }
+          },
+          "required": [
+            "name",
+            "kind"
+          ],
+          "title": "contentDef"
+        },
+        "ValueKind": {
+          "type": "string",
+          "enum": [
+            "string",
+            "int",
+            "float",
+            "bool",
+            "time",
+
+            "list(string)",
+            "list(int)",
+            "list(float)",
+            "list(bool)",
+            "list(time)"
+          ],
+          "title": "valueKind"
+        },
+        "ContentType": {
+          "type": "string",
+          "enum": [
+            "com.nativeformat.content.audio"
+          ]
+        }
+      }
+    }
+  }
+}

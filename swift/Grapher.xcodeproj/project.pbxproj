@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"Grapher::GrapherPackageTests::ProductTarget" /* GrapherPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_69 /* Build configuration list for PBXAggregateTarget "GrapherPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_72 /* PBXTargetDependency */,
+			);
+			name = GrapherPackageTests;
+			productName = GrapherPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		3DFC07C924CB8C3A5236FBB6 /* invalid-node.json in Resources */ = {isa = PBXBuildFile; fileRef = C334CB2F269715DD4190CFBA /* invalid-node.json */; };
+		3FDD7D4320D0473500676901 /* CompressorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD7D4120D0473500676901 /* CompressorNode.swift */; };
+		3FDD7D4420D0473500676901 /* FilterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD7D4220D0473500676901 /* FilterNode.swift */; };
+		3FE1584020DAC11400B504AB /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1583F20DAC11400B504AB /* ContentType.swift */; };
+		745397AC4C0375BD34AF03AA /* kitchen-sink.json in Resources */ = {isa = PBXBuildFile; fileRef = F4130819159C79BDA0BDB705 /* kitchen-sink.json */; };
+		ACD9E7A5E65B65ACC047AEB2 /* time-limits.json in Resources */ = {isa = PBXBuildFile; fileRef = B26ACEC0A99E3B2452E71EEC /* time-limits.json */; };
+		C59A6F1A03DF62092AE682DA /* invalid-score.json in Resources */ = {isa = PBXBuildFile; fileRef = F10E8B020E540878EC37E450 /* invalid-score.json */; };
+		CABDEE62219601B90060AD87 /* CompanderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDEE60219601B90060AD87 /* CompanderNode.swift */; };
+		CABDEE63219601B90060AD87 /* ExpanderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDEE61219601B90060AD87 /* ExpanderNode.swift */; };
+		OBJ_42 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Graph.swift */; };
+		OBJ_43 /* IDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* IDGenerator.swift */; };
+		OBJ_44 /* LoadingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* LoadingPolicy.swift */; };
+		OBJ_45 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Node.swift */; };
+		OBJ_46 /* NodeKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* NodeKind.swift */; };
+		OBJ_47 /* DelayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DelayNode.swift */; };
+		OBJ_48 /* Eq3bandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Eq3bandNode.swift */; };
+		OBJ_49 /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* FileNode.swift */; };
+		OBJ_50 /* GainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* GainNode.swift */; };
+		OBJ_51 /* LoopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* LoopNode.swift */; };
+		OBJ_52 /* NoiseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* NoiseNode.swift */; };
+		OBJ_53 /* SilenceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* SilenceNode.swift */; };
+		OBJ_54 /* SineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* SineNode.swift */; };
+		OBJ_55 /* StretchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* StretchNode.swift */; };
+		OBJ_56 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Param.swift */; };
+		OBJ_57 /* AudioParam+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* AudioParam+Commands.swift */; };
+		OBJ_58 /* AudioParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* AudioParam.swift */; };
+		OBJ_59 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Score.swift */; };
+		OBJ_60 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Version.swift */; };
+		OBJ_67 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_78 /* GrapherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* GrapherTests.swift */; };
+		OBJ_79 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Helpers.swift */; };
+		OBJ_81 /* Grapher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Grapher::Grapher::Product" /* Grapher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F2C75E6208660A200E5E954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Grapher::Grapher";
+			remoteInfo = Grapher;
+		};
+		3F2C75E7208660A200E5E954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Grapher::GrapherTests";
+			remoteInfo = GrapherTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3FDD7D4120D0473500676901 /* CompressorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressorNode.swift; sourceTree = "<group>"; };
+		3FDD7D4220D0473500676901 /* FilterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterNode.swift; sourceTree = "<group>"; };
+		3FE1583F20DAC11400B504AB /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		B26ACEC0A99E3B2452E71EEC /* time-limits.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = "time-limits.json"; sourceTree = "<group>"; };
+		C334CB2F269715DD4190CFBA /* invalid-node.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = "invalid-node.json"; sourceTree = "<group>"; };
+		CABDEE60219601B90060AD87 /* CompanderNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanderNode.swift; sourceTree = "<group>"; };
+		CABDEE61219601B90060AD87 /* ExpanderNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpanderNode.swift; sourceTree = "<group>"; };
+		F10E8B020E540878EC37E450 /* invalid-score.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = "invalid-score.json"; sourceTree = "<group>"; };
+		F4130819159C79BDA0BDB705 /* kitchen-sink.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = "kitchen-sink.json"; sourceTree = "<group>"; };
+		"Grapher::Grapher::Product" /* Grapher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Grapher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Grapher::GrapherTests::Product" /* GrapherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = GrapherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* IDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDGenerator.swift; sourceTree = "<group>"; };
+		OBJ_11 /* LoadingPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPolicy.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		OBJ_13 /* NodeKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeKind.swift; sourceTree = "<group>"; };
+		OBJ_15 /* DelayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNode.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Eq3bandNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eq3bandNode.swift; sourceTree = "<group>"; };
+		OBJ_17 /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
+		OBJ_18 /* GainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainNode.swift; sourceTree = "<group>"; };
+		OBJ_19 /* LoopNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopNode.swift; sourceTree = "<group>"; };
+		OBJ_20 /* NoiseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseNode.swift; sourceTree = "<group>"; };
+		OBJ_21 /* SilenceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilenceNode.swift; sourceTree = "<group>"; };
+		OBJ_22 /* SineNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineNode.swift; sourceTree = "<group>"; };
+		OBJ_23 /* StretchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchNode.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
+		OBJ_26 /* AudioParam+Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioParam+Commands.swift"; sourceTree = "<group>"; };
+		OBJ_27 /* AudioParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioParam.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		OBJ_29 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		OBJ_32 /* GrapherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapherTests.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_81 /* Grapher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51ABF671CF4DB79D9A89DB40 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F4130819159C79BDA0BDB705 /* kitchen-sink.json */,
+				B26ACEC0A99E3B2452E71EEC /* time-limits.json */,
+				C334CB2F269715DD4190CFBA /* invalid-node.json */,
+				F10E8B020E540878EC37E450 /* invalid-score.json */,
+			);
+			name = fixtures;
+			path = ../fixtures;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				CABDEE60219601B90060AD87 /* CompanderNode.swift */,
+				CABDEE61219601B90060AD87 /* ExpanderNode.swift */,
+				3FDD7D4120D0473500676901 /* CompressorNode.swift */,
+				3FDD7D4220D0473500676901 /* FilterNode.swift */,
+				OBJ_15 /* DelayNode.swift */,
+				OBJ_16 /* Eq3bandNode.swift */,
+				OBJ_17 /* FileNode.swift */,
+				OBJ_18 /* GainNode.swift */,
+				OBJ_19 /* LoopNode.swift */,
+				OBJ_20 /* NoiseNode.swift */,
+				OBJ_21 /* SilenceNode.swift */,
+				OBJ_22 /* SineNode.swift */,
+				OBJ_23 /* StretchNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		OBJ_25 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_26 /* AudioParam+Commands.swift */,
+				OBJ_27 /* AudioParam.swift */,
+			);
+			path = Params;
+			sourceTree = "<group>";
+		};
+		OBJ_30 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_31 /* GrapherTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_31 /* GrapherTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_32 /* GrapherTests.swift */,
+				OBJ_33 /* Helpers.swift */,
+			);
+			name = GrapherTests;
+			path = Tests/GrapherTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Grapher::GrapherTests::Product" /* GrapherTests.xctest */,
+				"Grapher::Grapher::Product" /* Grapher.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_30 /* Tests */,
+				OBJ_34 /* Products */,
+				51ABF671CF4DB79D9A89DB40 /* fixtures */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Grapher */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Grapher */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Graph.swift */,
+				OBJ_10 /* IDGenerator.swift */,
+				OBJ_11 /* LoadingPolicy.swift */,
+				OBJ_12 /* Node.swift */,
+				OBJ_13 /* NodeKind.swift */,
+				3FE1583F20DAC11400B504AB /* ContentType.swift */,
+				OBJ_14 /* Nodes */,
+				OBJ_24 /* Param.swift */,
+				OBJ_25 /* Params */,
+				OBJ_28 /* Score.swift */,
+				OBJ_29 /* Version.swift */,
+			);
+			name = Grapher;
+			path = Sources/Grapher;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Grapher::Grapher" /* Grapher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_38 /* Build configuration list for PBXNativeTarget "Grapher" */;
+			buildPhases = (
+				OBJ_41 /* Sources */,
+				OBJ_61 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grapher;
+			productName = Grapher;
+			productReference = "Grapher::Grapher::Product" /* Grapher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Grapher::GrapherTests" /* GrapherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_74 /* Build configuration list for PBXNativeTarget "GrapherTests" */;
+			buildPhases = (
+				OBJ_77 /* Sources */,
+				OBJ_80 /* Frameworks */,
+				4DACCFF2BCB6E6679F77834A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_82 /* PBXTargetDependency */,
+			);
+			name = GrapherTests;
+			productName = GrapherTests;
+			productReference = "Grapher::GrapherTests::Product" /* GrapherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"Grapher::SwiftPMPackageDescription" /* GrapherPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_63 /* Build configuration list for PBXNativeTarget "GrapherPackageDescription" */;
+			buildPhases = (
+				OBJ_66 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrapherPackageDescription;
+			productName = GrapherPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Grapher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Grapher::Grapher" /* Grapher */,
+				"Grapher::SwiftPMPackageDescription" /* GrapherPackageDescription */,
+				"Grapher::GrapherPackageTests::ProductTarget" /* GrapherPackageTests */,
+				"Grapher::GrapherTests" /* GrapherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DACCFF2BCB6E6679F77834A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				745397AC4C0375BD34AF03AA /* kitchen-sink.json in Resources */,
+				ACD9E7A5E65B65ACC047AEB2 /* time-limits.json in Resources */,
+				3DFC07C924CB8C3A5236FBB6 /* invalid-node.json in Resources */,
+				C59A6F1A03DF62092AE682DA /* invalid-score.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_42 /* Graph.swift in Sources */,
+				OBJ_43 /* IDGenerator.swift in Sources */,
+				CABDEE63219601B90060AD87 /* ExpanderNode.swift in Sources */,
+				3FDD7D4320D0473500676901 /* CompressorNode.swift in Sources */,
+				OBJ_44 /* LoadingPolicy.swift in Sources */,
+				OBJ_45 /* Node.swift in Sources */,
+				OBJ_46 /* NodeKind.swift in Sources */,
+				OBJ_47 /* DelayNode.swift in Sources */,
+				OBJ_48 /* Eq3bandNode.swift in Sources */,
+				OBJ_49 /* FileNode.swift in Sources */,
+				OBJ_50 /* GainNode.swift in Sources */,
+				OBJ_51 /* LoopNode.swift in Sources */,
+				OBJ_52 /* NoiseNode.swift in Sources */,
+				3FDD7D4420D0473500676901 /* FilterNode.swift in Sources */,
+				3FE1584020DAC11400B504AB /* ContentType.swift in Sources */,
+				OBJ_53 /* SilenceNode.swift in Sources */,
+				OBJ_54 /* SineNode.swift in Sources */,
+				OBJ_55 /* StretchNode.swift in Sources */,
+				OBJ_56 /* Param.swift in Sources */,
+				CABDEE62219601B90060AD87 /* CompanderNode.swift in Sources */,
+				OBJ_57 /* AudioParam+Commands.swift in Sources */,
+				OBJ_58 /* AudioParam.swift in Sources */,
+				OBJ_59 /* Score.swift in Sources */,
+				OBJ_60 /* Version.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_67 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_78 /* GrapherTests.swift in Sources */,
+				OBJ_79 /* Helpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Grapher::GrapherTests" /* GrapherTests */;
+			targetProxy = 3F2C75E7208660A200E5E954 /* PBXContainerItemProxy */;
+		};
+		OBJ_82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Grapher::Grapher" /* Grapher */;
+			targetProxy = 3F2C75E6208660A200E5E954 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Grapher.xcodeproj/Grapher_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Grapher;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Grapher;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Grapher.xcodeproj/Grapher_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Grapher;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Grapher;
+			};
+			name = Release;
+		};
+		OBJ_64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Grapher.xcodeproj/GrapherTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = GrapherTests;
+			};
+			name = Debug;
+		};
+		OBJ_76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Grapher.xcodeproj/GrapherTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = GrapherTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "Grapher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_38 /* Build configuration list for PBXNativeTarget "Grapher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_39 /* Debug */,
+				OBJ_40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_63 /* Build configuration list for PBXNativeTarget "GrapherPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_64 /* Debug */,
+				OBJ_65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_69 /* Build configuration list for PBXAggregateTarget "GrapherPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_70 /* Debug */,
+				OBJ_71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_74 /* Build configuration list for PBXNativeTarget "GrapherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_75 /* Debug */,
+				OBJ_76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

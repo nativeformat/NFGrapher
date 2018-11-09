@@ -1,0 +1,753 @@
+{
+  "version": "1.0.0",
+  "graph": {
+    "id": "3f0461c7-70d5-4769-af93-776619cecafc",
+    "loadingPolicy": "allContentPlaythrough",
+    "nodes": [
+      {
+        "id": "d8e05007-ea50-4230-b84e-f1ba31cc6399",
+        "kind": "com.nativeformat.plugin.eq.eq3band",
+        "config": {},
+        "params": {
+          "lowCutoff": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "midFrequency": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "highCutoff": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "lowGain": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "midGain": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "highGain": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "0b8060fc-e873-47d8-932c-d288b21fb277",
+        "kind": "com.nativeformat.plugin.file.file",
+        "config": {
+          "file": "a string",
+          "when": 1000,
+          "duration": 1000,
+          "offset": 1000
+        },
+        "params": {}
+      },
+      {
+        "id": "668a9337-3e39-4cfd-9119-e132ccbd1a84",
+        "kind": "com.nativeformat.plugin.noise.noise",
+        "config": {
+          "when": 1000,
+          "duration": 1000
+        },
+        "params": {}
+      },
+      {
+        "id": "d8c5208a-4fd3-43d5-a2ba-0d39e2fac62e",
+        "kind": "com.nativeformat.plugin.noise.silence",
+        "config": {
+          "when": 1000,
+          "duration": 1000
+        },
+        "params": {}
+      },
+      {
+        "id": "8952b5c6-1c07-4063-9cb4-c5c92a6c0973",
+        "kind": "com.nativeformat.plugin.time.loop",
+        "config": {
+          "when": 1000,
+          "duration": 1000,
+          "loopCount": 1
+        },
+        "params": {}
+      },
+      {
+        "id": "6bbf084e-74c7-4e84-8e8b-afe7239d2b3f",
+        "kind": "com.nativeformat.plugin.time.stretch",
+        "config": {},
+        "params": {
+          "pitchRatio": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "formantRatio": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "stretch": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "27bf7115-dbd8-4153-8886-376c4083e563",
+        "kind": "com.nativeformat.plugin.waa.delay",
+        "config": {},
+        "params": {
+          "delayTime": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "27bf7115-dbd8-4153-8886-376c4083e563",
+        "kind": "com.nativeformat.plugin.eq.filter",
+        "config": {
+          "filterType": "highPass"
+        },
+        "params": {
+          "lowCutoff": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ],
+          "highCutoff": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "ee94bfa7-418e-4d13-90a6-fac1e5bd3c37",
+        "kind": "com.nativeformat.plugin.waa.gain",
+        "config": {},
+        "params": {
+          "gain": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            },
+            {
+              "name": "linearRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "exponentialRampToValueAtTime",
+              "args": {
+                "value": 1.234,
+                "endTime": 1000
+              }
+            },
+            {
+              "name": "setTargetAtTime",
+              "args": {
+                "target": 1.234,
+                "startTime": 1000,
+                "timeConstant": 1.234
+              }
+            },
+            {
+              "name": "setValueCurveAtTime",
+              "args": {
+                "values": [
+                  1.23,
+                  4.23,
+                  7.63
+                ],
+                "startTime": 1000,
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "b81c2ae8-4035-4563-9b21-88d10addfe35",
+        "kind": "com.nativeformat.plugin.wave.sine",
+        "config": {
+          "frequency": 1.234,
+          "when": 1000,
+          "duration": 1000
+        },
+        "params": {}
+      },
+      {
+        "id": "f6e4bf13-3db2-4c76-b42b-1e5e5b4d6eb5",
+        "kind": "com.nativeformat.plugin.compressor.compressor",
+        "config": {
+          "detectionMode": "rms",
+          "kneeMode": "hard",
+          "cutoffs": [220.0, 880.0]
+        },
+        "params": {
+          "thresholdDb": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            }
+          ],
+          "kneeDb": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            }
+          ],
+          "ratioDb": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            }
+          ],
+          "attack": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            }
+          ],
+          "release": [
+            {
+              "name": "setValueAtTime",
+              "args": {
+                "value": 1.234,
+                "startTime": 1000
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "b4a0ce44-f527-481a-9caa-a5ea95d532dc",
+        "source": "d8e05007-ea50-4230-b84e-f1ba31cc6399",
+        "target": "0b8060fc-e873-47d8-932c-d288b21fb277"
+      },
+      {
+        "id": "5e264cea-7573-4bcd-8c76-f4c6a1f68579",
+        "source": "0b8060fc-e873-47d8-932c-d288b21fb277",
+        "target": "668a9337-3e39-4cfd-9119-e132ccbd1a84"
+      },
+      {
+        "id": "b19cc4bb-3bca-46a3-b441-7c5fdbdf373e",
+        "source": "668a9337-3e39-4cfd-9119-e132ccbd1a84",
+        "target": "d8c5208a-4fd3-43d5-a2ba-0d39e2fac62e"
+      },
+      {
+        "id": "ccbf5a0c-b32c-4a01-8dee-acfaad1d4c7d",
+        "source": "d8c5208a-4fd3-43d5-a2ba-0d39e2fac62e",
+        "target": "8952b5c6-1c07-4063-9cb4-c5c92a6c0973"
+      },
+      {
+        "id": "8744655a-8db3-471a-89c3-0c4a83c9c5ec",
+        "source": "8952b5c6-1c07-4063-9cb4-c5c92a6c0973",
+        "target": "6bbf084e-74c7-4e84-8e8b-afe7239d2b3f"
+      },
+      {
+        "id": "87f846b8-7ba7-4460-a235-6528b3599a8f",
+        "source": "6bbf084e-74c7-4e84-8e8b-afe7239d2b3f",
+        "target": "27bf7115-dbd8-4153-8886-376c4083e563"
+      },
+      {
+        "id": "d5ba4b4b-cfc9-43a3-afcc-c2ed2a05c806",
+        "source": "27bf7115-dbd8-4153-8886-376c4083e563",
+        "target": "ee94bfa7-418e-4d13-90a6-fac1e5bd3c37"
+      },
+      {
+        "id": "6cf29bb1-3d86-453b-8782-708ae2ed651d",
+        "source": "ee94bfa7-418e-4d13-90a6-fac1e5bd3c37",
+        "target": "b81c2ae8-4035-4563-9b21-88d10addfe35"
+      }
+    ],
+    "scripts": []
+  }
+}

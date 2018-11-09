@@ -1,0 +1,62 @@
+{
+  "name": "@spotify/nf-grapher",
+  "// version": "The `version` field is overridden when publishing from the root!",
+  "version": "0.0.0",
+  "description": "Native Format Graph Library, Grapher",
+  "main": "dist/main/index.js",
+  "types": "dist/main/index.d.ts",
+  "module": "dist/module/index.js",
+  "jest": {
+    "transform": {
+      "^.+\\.(jsx|js|ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "scripts": {
+    "test": "NODE_ENV=test jest --verbose",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && npm run build:main && npm run build:module",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spotify/NFGrapher"
+  },
+  "author": "Jose Falcon <chedkid@gmail.com>",
+  "contributors": [
+    {
+      "name": "Drew Petersen",
+      "email": "kirbysayshi@gmail.com"
+    },
+    {
+      "name": "Justin Windle",
+      "email": "justin@soulwire.co.uk"
+    }
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/jest": "^22.1.1",
+    "@types/lodash": "^4.14.106",
+    "@types/uuid": "^3.4.3",
+    "jest": "^23.6.0",
+    "lodash": "^4.17.5",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.9.0",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "uuid": "^3.2.1"
+  }
+}
