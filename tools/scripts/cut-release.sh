@@ -48,8 +48,8 @@ fi
 # tag
 if [ "$systems_go" == true ]; then
     echo "Tagging HEAD and pushing to trigger a publish build."
-    echo git tag "$current_version"
-    echo git push --tags
+    git tag "$current_version"
+    git push --tags
 fi
 
 echo "Complete."
