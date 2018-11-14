@@ -203,12 +203,27 @@ workflows:
       - deploy-java:
           requires:
             - hold
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+/
+            branches:
+              ignore: /.*/
       - deploy-js-ts:
           requires:
             - hold
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+/
+            branches:
+              ignore: /.*/
       - deploy-python:
           requires:
             - hold
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+/
+            branches:
+              ignore: /.*/
       - hold:
           type: approval
           filters:
