@@ -26,17 +26,6 @@ current_version="$(jq -r .version smart-player-contract.json)"
 
 echo "Current version in contract: ${current_version}"
 
-# read -p "Next version (must match current version! format: x.x.x): " next_release
-
-# ensure it's roughly a valid version
-# node -p 'assert.equal(/^\d+\.\d+\.\d+/.exec(process.argv[1]).length, 1)' "${next_release}" 2> /dev/null
-
-# if [[ $? -ne 0 ]]; then
-#   echo "Invalid version number=${next_release}"
-#   echo "Version number must be of the form x.x.x, such as 3.4.5 or 2.678.3."
-#   exit 1
-# fi
-
 # assert that this version hasn't been used before
 git fetch --tags
 if git show --name-only "$current_version" -- 2> /dev/null; then
@@ -45,10 +34,7 @@ if git show --name-only "$current_version" -- 2> /dev/null; then
   exit 1
 fi
 
-# # Set new version
-# node -e 'p="./smart-player-contract.json";c=JSON.parse(fs.readFileSync(p));c.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(c, null, "  "))' "${next_release}"
-
-# # Regenerate ?
+# # Regenerate to ensure determinism.
 pushd tools/nf-gen-ts
 npm run generate:all
 popd
@@ -62,7 +48,7 @@ fi
 # tag
 if [ "$systems_go" == true ]; then
     echo "Tagging HEAD and pushing to trigger a publish build."
-    echo git tag "$next_release"
+    echo git tag "$current_version"
     echo git push --tags
 fi
 

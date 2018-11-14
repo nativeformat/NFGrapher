@@ -79,12 +79,24 @@ But to run tests, which are written in each library's language, a much more spra
 
 To update the contract follow these steps:
 
-1. Read the [Contract Versioning Document](doc/nf-contract-versioning.md). It provides steps for how to update the version number when changing the contract and what the implications are.
+1. Read the [Contract Versioning Document][]. It provides steps for how to update the version number when changing the contract and what the implications are.
 1. Make your changes.
-1. Bump the contract version number according the doc.
+1. Bump the contract version number according to the [Contract Versioning Document][].
 1. Update [kitchen-sink.json](/fixtures/kitchen-sink.json) if necessary.
 1. Regenerate code with [`nf-gen-ts`](/tools/nf-gen-ts).
 1. Open a PR.
+
+[Contract Versioning Document]: doc/nf-contract-versioning.md
+
+## Releasing
+
+From the master branch, run:
+
+```sh
+$ tools/scripts/cut-release.sh
+```
+
+This will, eventually, create a version tag and push it to Github, which will kick off a release build that requires manual approval in the CircleCI UI.
 
 # Contributing :mailbox_with_mail:
 
