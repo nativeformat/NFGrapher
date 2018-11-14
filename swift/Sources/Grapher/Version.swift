@@ -28,7 +28,7 @@ public struct Version: Codable {
     }
 
     /// Current version.
-    public static let current: Version = Version(1, 2, 2)
+    public static let current: Version = Version(1, 2, 3)
 
     /// Major version.
     public let major: Int
