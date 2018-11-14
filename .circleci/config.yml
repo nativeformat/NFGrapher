@@ -4,8 +4,6 @@ jobs:
     docker:
       - image: circleci/node:10.10
 
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -32,8 +30,6 @@ jobs:
     docker:
       - image: circleci/node:10.10
 
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -58,8 +54,6 @@ jobs:
   testjava:
     docker:
       - image: circleci/openjdk:8-jdk
-
-    working_directory: ~/repo
 
     steps:
       - checkout
@@ -86,8 +80,6 @@ jobs:
     macos:
       xcode: "10.1.0"
 
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -104,8 +96,6 @@ jobs:
     environment:
       CC: clang-3.9
       CXX: clang++-3.9
-
-    working_directory: ~/repo
 
     steps:
       - checkout
@@ -136,8 +126,6 @@ jobs:
     docker:
       - image: circleci/python:3.6.4
 
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -158,6 +146,7 @@ jobs:
       - image: circleci/openjdk:8-jdk
 
     steps:
+      - checkout
       - run: sudo apt-get install jq -y
       - run: current_release="$(jq -r .version smart-player-contract.json)"
       - run: pushd java
@@ -170,6 +159,7 @@ jobs:
       - image: circleci/node:10.10
 
     steps:
+      - checkout
       - run: sudo apt-get install jq -y
       - run: current_release="$(jq -r .version smart-player-contract.json)"
       - run: pushd js
@@ -180,9 +170,9 @@ jobs:
     docker:
       - image: circleci/python:3.6.4
 
-    working_directory: python
-
     steps:
+      - checkout
+      - run: pushd python
       - run: echo python setup.py sdist
       - run: echo python setup.py sdist upload -r local
 
