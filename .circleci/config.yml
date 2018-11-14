@@ -200,13 +200,6 @@ workflows:
 
     tagged-deploy:
       jobs:
-        - hold:
-            type: approval
-            filters:
-              tags:
-                only: /^\d+\.\d+\.\d+/
-              branches:
-                ignore: /.*/
         - deploy-java:
             requires:
               - hold
@@ -216,3 +209,10 @@ workflows:
         - deploy-python:
             requires:
               - hold
+        - hold:
+            type: approval
+            filters:
+              tags:
+                only: /^\d+\.\d+\.\d+/
+              branches:
+                ignore: /.*/
