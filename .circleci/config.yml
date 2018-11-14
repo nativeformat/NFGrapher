@@ -91,9 +91,6 @@ jobs:
     steps:
       - checkout
 
-      # - run: |
-      #     sudo gem install -N xcodeproj
-
       - run:
           command: |
             # rake xcodeproj
@@ -155,6 +152,41 @@ jobs:
           command: python -m unittest discover -v
           working_directory: python/
 
+
+  deploy-java:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    steps:
+      - run: sudo apt-get install jq -y
+      - run: current_release="$(jq -r .version smart-player-contract.json)"
+      - run: pushd java
+      - run: echo mvn versions:set -DnewVersion="$current_release" -DgenerateBackupPoms=false
+      - run: echo mvn clean deploy
+
+
+  deploy-js-ts:
+    docker:
+      - image: circleci/node:10.10
+
+    steps:
+      - run: sudo apt-get install jq -y
+      - run: current_release="$(jq -r .version smart-player-contract.json)"
+      - run: pushd js
+      - run: echo npm version --no-git-tag-version -f "$current_release"
+      - run: echo npm publish
+
+  deploy-python:
+    docker:
+      - image: circleci/python:3.6.4
+
+    working_directory: python
+
+    steps:
+      - run: echo python setup.py sdist
+      - run: echo python setup.py sdist upload -r local
+
+
 workflows:
     version: 2
     build:
@@ -165,3 +197,22 @@ workflows:
         - testswift
         - testcpp
         - testpython
+
+    tagged-deploy:
+      jobs:
+        - hold:
+            type: approval
+            filters:
+              tags:
+                only: /^\d+\.\d+\.\d+/
+              branches:
+                ignore: /.*/
+        - deploy-java:
+            requires:
+              - hold
+        - deploy-js-ts:
+            requires:
+              - hold
+        - deploy-python:
+            requires:
+              - hold
