@@ -96,7 +96,7 @@ From the master branch, run:
 $ tools/scripts/cut-release.sh --systems-go
 ```
 
-This will, eventually, create a version tag and push it to Github, which will kick off a release build that requires manual approval in the CircleCI UI.
+This will, eventually, create a version tag and push it to Github, which will kick off a release build that requires [manual approval in the CircleCI UI](https://circleci.com/gh/spotify/workflows/NFGrapher).
 
 # Contributing :mailbox_with_mail:
 
