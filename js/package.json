@@ -1,8 +1,8 @@
 {
-  "name": "@spotify/nf-grapher",
+  "name": "nf-grapher",
   "// version": "The `version` field is overridden when publishing from the root!",
   "version": "0.0.0",
-  "description": "Native Format Graph Library, Grapher",
+  "description": "Native Format Graph Library: Grapher",
   "main": "dist/main/index.js",
   "types": "dist/main/index.d.ts",
   "module": "dist/module/index.js",
