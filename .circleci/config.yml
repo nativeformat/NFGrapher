@@ -188,31 +188,31 @@ jobs:
 
 
 workflows:
-    version: 2
-    build:
-      jobs:
-        - testtools
-        - testjsts
-        - testjava
-        - testswift
-        - testcpp
-        - testpython
+  version: 2
+  build:
+    jobs:
+      - testtools
+      - testjsts
+      - testjava
+      - testswift
+      - testcpp
+      - testpython
 
-    tagged-deploy:
-      jobs:
-        - deploy-java:
-            requires:
-              - hold
-        - deploy-js-ts:
-            requires:
-              - hold
-        - deploy-python:
-            requires:
-              - hold
-        - hold:
-            type: approval
-            filters:
-              tags:
-                only: /^\d+\.\d+\.\d+/
-              branches:
-                ignore: /.*/
+  tagged-deploy:
+    jobs:
+      - deploy-java:
+          requires:
+            - hold
+      - deploy-js-ts:
+          requires:
+            - hold
+      - deploy-python:
+          requires:
+            - hold
+      - hold:
+          type: approval
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+/
+            branches:
+              ignore: /.*/
