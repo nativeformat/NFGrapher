@@ -164,6 +164,7 @@ jobs:
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
       - run: cd js && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - run: cd js && npm version --no-git-tag-version -f "$current_release"
+      - run: cd js && npm ci
       - run: cd js && npm publish
 
   deploy-python:
