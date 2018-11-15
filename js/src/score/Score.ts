@@ -25,7 +25,7 @@ import { Score as IScore } from './interfaces';
 class Score implements IScore {
   constructor(
     public graph: Graph = new Graph(),
-    public version: string = '1.2.12'
+    public version: string = '1.2.13'
   ) {}
   public static from(score: IScore): Score {
     return new Score(Graph.from(score.graph), score.version);
