@@ -155,8 +155,8 @@ jobs:
       - run: sudo apt-get install jq -y
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
       - run: cd java && mvn versions:set -DnewVersion="${current_release}-SNAPSHOT" -DgenerateBackupPoms=false
-      - run: cd java && mvn -B -Prelease --settings settings.xml release:clean release:prepare -DpushChanges=false -DreleaseVersion="${current_release}" -DdevelopmentVersion=0-SNAPSHOT
-      - run: cd java && mvn -B -Prelease --settings settings.xml release:perform
+      - run: cd java && mvn -X -B -Prelease --settings settings.xml release:clean release:prepare -DpushChanges=false -DreleaseVersion="${current_release}" -DdevelopmentVersion=0-SNAPSHOT
+      - run: cd java && mvn -X -B -Prelease --settings settings.xml release:perform
 
 
   deploy-js-ts:
