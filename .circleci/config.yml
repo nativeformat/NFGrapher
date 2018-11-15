@@ -9,17 +9,17 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "tools/nf-gen-ts/package.json" }}
+          - v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
           - v1-dependencies-
 
       - run:
-          command: npm install
+          command: npm ci
           working_directory: tools/nf-gen-ts/
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "tools/nf-gen-ts/package.json" }}
+          key: v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
 
       # run "tests"
       - run:
@@ -35,17 +35,17 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "js/package.json" }}
+          - v1-dependencies-{{ checksum "js/package-lock.json" }}
           - v1-dependencies-
 
       - run:
-          command: npm install
+          command: npm ci
           working_directory: js/
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "js/package.json" }}
+          key: v1-dependencies-{{ checksum "js/package-lock.json" }}
 
       - run:
           command: npm run test
