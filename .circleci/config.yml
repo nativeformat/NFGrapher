@@ -149,10 +149,9 @@ jobs:
       - checkout
       - run: sudo apt-get install jq -y
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
-      - run: pushd java
-      - run: mvn versions:set -DnewVersion="$current_release" -DgenerateBackupPoms=false
-      - run: mvn -Prelease release:clean release:prepare
-      - run: mvn -Prelease release:perform
+      - run: cd java && mvn versions:set -DnewVersion="$current_release" -DgenerateBackupPoms=false
+      - run: cd java && mvn -Prelease release:clean release:prepare
+      - run: cd java && mvn -Prelease release:perform
 
 
   deploy-js-ts:
@@ -163,10 +162,9 @@ jobs:
       - checkout
       - run: sudo apt-get install jq -y
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
-      - run: pushd js
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - run: npm version --no-git-tag-version -f "$current_release"
-      - run: npm publish
+      - run: cd js && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - run: cd js && npm version --no-git-tag-version -f "$current_release"
+      - run: cd js && npm publish
 
   deploy-python:
     docker:
@@ -174,17 +172,19 @@ jobs:
 
     steps:
       - checkout
-      - run: pushd python
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run: pip install twine
       - run:
           name: init .pypirc
           command: |
+            cd python
             echo -e "[pypi]" >> ~/.pypirc
             echo -e "username = $PYPI_USERNAME" >> ~/.pypirc
             echo -e "password = $PYPI_PASSWORD" >> ~/.pypi
-      - run: python setup.py sdist
-      - run: python setup.py bdist_wheel
-      - run: twine upload dist/*
+      - run: cd python && python setup.py sdist
+      - run: cd python && python setup.py bdist_wheel
+      - run: cd python && twine upload dist/*
 
 
 workflows:
