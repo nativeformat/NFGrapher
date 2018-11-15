@@ -1,6 +1,6 @@
 # Native Format Smart Player API
 
-> Version 1.2.9
+> Version 1.2.10
 
 ## Table of Contents
 
