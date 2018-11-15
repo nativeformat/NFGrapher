@@ -143,7 +143,7 @@ function expect<T>(result: Result<T, Error>, message: string) {
 }
 
 function javaLicenseHeaders(pomPath: string): void {
-  execSync(`mvn -X license:update-file-header`, { cwd: pomPath });
+  execSync(`mvn license:update-file-header`, { cwd: pomPath });
 }
 
 function prettyJava(paths: string[]): void {
