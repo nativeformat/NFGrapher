@@ -39,7 +39,7 @@ public interface Score {
   String version();
 
   static Score create(final Graph graph) {
-    return create(graph, "1.2.17");
+    return create(graph, "1.2.18");
   }
 
   static Score create(final Graph graph, final String version) {
@@ -47,6 +47,6 @@ public interface Score {
   }
 
   static ScoreBuilder builder() {
-    return new ScoreBuilder().version("1.2.17");
+    return new ScoreBuilder().version("1.2.18");
   }
 }
