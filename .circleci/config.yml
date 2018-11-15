@@ -147,6 +147,9 @@ jobs:
 
     steps:
       - checkout
+      # https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/
+      - run: echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+      - run: echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
       - run: sudo apt-get install jq -y
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
       - run: cd java && mvn versions:set -DnewVersion="${current_release}-SNAPSHOT" -DgenerateBackupPoms=false
