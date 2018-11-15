@@ -1,4 +1,4 @@
-# nf-grapher-js
+# nf-grapher
 
 This is a JavaScript library for building Native Format Scores.
 
@@ -7,7 +7,7 @@ This is a JavaScript library for building Native Format Scores.
 ## Getting Started
 
 ```
-npm install @spotify/nf-grapher
+npm install nf-grapher
 ```
 
 This library is written in [TypeScript](http://www.typescriptlang.org/) and definitions are included.

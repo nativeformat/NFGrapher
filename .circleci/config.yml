@@ -147,11 +147,16 @@ jobs:
 
     steps:
       - checkout
+      # https://github.com/keybase/keybase-issues/issues/1712#issuecomment-310481352
+      - run: echo 'export GPG_TTY=$(tty)' >> $BASH_ENV
+      # https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/
+      - run: echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --batch --passphrase "$GPG_PASSPHRASE" --import
+      - run: echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --batch --passphrase "$GPG_PASSPHRASE" --import-ownertrust
       - run: sudo apt-get install jq -y
       - run: echo 'export current_release="$(jq -r .version smart-player-contract.json)"' >> $BASH_ENV
       - run: cd java && mvn versions:set -DnewVersion="${current_release}-SNAPSHOT" -DgenerateBackupPoms=false
-      - run: cd java && mvn -Prelease release:clean release:prepare
-      - run: cd java && mvn -Prelease release:perform
+      - run: cd java && mvn -X -B -P release --settings settings.xml release:clean release:prepare -DpushChanges=false -DreleaseVersion="${current_release}" -DdevelopmentVersion=0-SNAPSHOT
+      - run: cd java && mvn -X -B -P release --settings settings.xml release:perform
 
 
   deploy-js-ts:
