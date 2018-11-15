@@ -179,10 +179,9 @@ jobs:
       - run:
           name: init .pypirc
           command: |
-            cd python
             echo -e "[pypi]" >> ~/.pypirc
             echo -e "username = $PYPI_USERNAME" >> ~/.pypirc
-            echo -e "password = $PYPI_PASSWORD" >> ~/.pypi
+            echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
       - run: cd python && python setup.py sdist
       - run: cd python && python setup.py bdist_wheel
       - run: cd python && twine upload dist/*
