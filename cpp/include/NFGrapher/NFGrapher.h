@@ -40,5 +40,5 @@
 #include "CompanderNodeInfo.h"
 
 namespace nfgrapher {
-  inline constexpr const char* version() { return "1.2.5"; }
+  inline constexpr const char* version() { return "1.2.6"; }
 } // namespace nfgrapher
