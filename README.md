@@ -16,7 +16,7 @@ This project is that combination of tools and the code they generate, along with
 
 [JSON Schema][] is used to describe a format we termed a [Score](doc/nf-score-protocol.md). This schema includes data structures for reading and writing the format.
 
-In the [Score Schema][], there are two top-level concepts: a Score and the ContractDef. The Score represents the format that would be consumed by a player, or written by a producer: an audio graph, with nodes, edges, audio parameters and their commands, and metadata. The ContractDef is a schema that describes structures that describe what specifics can be found in a Score according to a specific Player Contract. A more [thorough explanation](doc/nf-score-protocol.md) might be helpeful to read.
+In the [Score Schema][], there are two top-level concepts: a Score and the ContractDef. The Score represents the format that would be consumed by a player, or written by a producer: an audio graph, with nodes, edges, audio parameters and their commands, and metadata. The ContractDef is a schema that describes structures that describe what specifics can be found in a Score according to a specific Player Contract. A more [thorough explanation](doc/nf-score-protocol.md) might be helpful to read.
 
 Confused yet? We're just getting started!
 
