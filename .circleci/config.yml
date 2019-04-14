@@ -18,7 +18,7 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
+            - tools/nf-gen-ts/node_modules
           key: v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
 
       # run "tests"
@@ -44,7 +44,7 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
+            - js/node_modules
           key: v1-dependencies-{{ checksum "js/package-lock.json" }}
 
       - run:
