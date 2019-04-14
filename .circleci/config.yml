@@ -9,8 +9,8 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
-          - v1-dependencies-
+          - tstools-v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
+          - tstools-v1-dependencies-
 
       - run:
           command: npm ci
@@ -19,7 +19,7 @@ jobs:
       - save_cache:
           paths:
             - tools/nf-gen-ts/node_modules
-          key: v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
+          key: tstools-v1-dependencies-{{ checksum "tools/nf-gen-ts/package-lock.json" }}
 
       # run "tests"
       - run:
@@ -35,8 +35,8 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "js/package-lock.json" }}
-          - v1-dependencies-
+          - js-v1-dependencies-{{ checksum "js/package-lock.json" }}
+          - js-v1-dependencies-
 
       - run:
           command: npm ci
@@ -45,7 +45,7 @@ jobs:
       - save_cache:
           paths:
             - js/node_modules
-          key: v1-dependencies-{{ checksum "js/package-lock.json" }}
+          key: js-v1-dependencies-{{ checksum "js/package-lock.json" }}
 
       - run:
           command: npm run test
@@ -60,8 +60,8 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "java/pom.xml" }}
-          - v1-dependencies-
+          - java-v1-dependencies-{{ checksum "java/pom.xml" }}
+          - java-v1-dependencies-
 
       - run:
           command: mvn dependency:go-offline
@@ -70,7 +70,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: v1-dependencies-{{ checksum "java/pom.xml" }}
+          key: java-v1-dependencies-{{ checksum "java/pom.xml" }}
 
       - run:
           command: mvn clean verify -B -e
