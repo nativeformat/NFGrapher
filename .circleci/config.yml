@@ -111,7 +111,40 @@ jobs:
           mkdir ninja-build
 
       - run:
-          command: cmake -GNinja ../
+          command: cmake -GNinja -DLLVM_STDLIB=1 ../
+          working_directory: ninja-build/
+
+      - run:
+          command: |
+            echo $CC
+            echo $CCX
+            ninja
+            ninja test
+          working_directory: ninja-build/
+
+  testcppgcc:
+    docker:
+      - image: ubuntu:bionic
+
+    environment:
+      CC: gcc
+      CXX: g++
+
+    steps:
+      - checkout
+
+      - run: |
+          apt-get update && apt-get install -y build-essential ninja-build libc++-dev libc++abi-dev libcurl4-openssl-dev wget git cmake
+
+      - run:
+          name: "Pull Submodules"
+          command: git submodule update --init --recursive
+
+      - run: |
+          mkdir ninja-build
+
+      - run:
+          command: cmake -GNinja -DLLVM_STDLIB=0 ../
           working_directory: ninja-build/
 
       - run:
@@ -205,6 +238,7 @@ workflows:
       - testjava
       - testswift
       - testcpp
+      - testcppgcc
       - testpython
 
   tagged-deploy:
