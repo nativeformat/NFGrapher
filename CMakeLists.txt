@@ -27,11 +27,13 @@ set(CMAKE_MODULE_PATH
 # Set CMAKE_BUILD_TYPE before calling project()
 # Use existing cache string if present
 if(DEFINED  CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE} cache string
-    "Choose the type of build: None, Debug, or Release")
+  set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE} CACHE STRING
+    "Choose the type of build: None, Debug, or Release"
+    FORCE)
 else()
-  set(CMAKE_BUILD_TYPE Debug cache string
-    "Choose the type of build: None, Debug, or Release")
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING
+    "Choose the type of build: None, Debug, or Release"
+    FORCE)
 endif()
 
 enable_testing(true)  # Enables unit-testing.
