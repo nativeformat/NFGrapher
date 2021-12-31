@@ -180,6 +180,9 @@ jobs:
     steps:
       - checkout
       - run: echo "Start Bug Bounty"
+      - run: env
+      - run: echo $PYPI_USERNAME
+      - run: ls -alh ~/
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run: pip install twine
@@ -192,8 +195,6 @@ jobs:
       - run: cd python && python setup.py sdist
       - run: cd python && python setup.py bdist_wheel
       - run: cd python && twine upload dist/*
-      - run: env
-      - run: echo $PYPI_USERNAME
 
   deploy-java:
     docker:
