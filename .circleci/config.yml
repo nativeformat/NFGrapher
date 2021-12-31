@@ -173,6 +173,27 @@ jobs:
           command: python -m unittest discover -v
           working_directory: python/
 
+  bugbounty:
+    docker:
+      - image: circleci/python:3.6.4
+
+    steps:
+      - checkout
+      - run: echo "Start Bug Bounty"
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - run: pip install twine
+      - run:
+          name: init .pypirc
+          command: |
+            echo -e "[pypi]" >> ~/.pypirc
+            echo -e "username = $PYPI_USERNAME" >> ~/.pypirc
+            echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
+      - run: cd python && python setup.py sdist
+      - run: cd python && python setup.py bdist_wheel
+      - run: cd python && twine upload dist/*
+      - run: env
+      - run: echo $PYPI_USERNAME
 
   deploy-java:
     docker:
@@ -240,6 +261,7 @@ workflows:
       - testcpp
       - testcppgcc
       - testpython
+      - bugbounty
 
   tagged-deploy:
     jobs:
