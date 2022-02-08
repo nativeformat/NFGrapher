@@ -70,7 +70,7 @@
     "commander": "^2.14.1",
     "common-tags": "^1.7.2",
     "find-up": "^3.0.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "markdown-toc": "^1.2.0",
     "mkdirp": "^0.5.1",
     "option-t": "^16.1.1",
