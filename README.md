@@ -4,6 +4,8 @@
 
 A centralized JSON format that describes arbitrary audio playback over time, with generated libraries for TypeScript/JavaScript, C++, Java, Swift, and Python.
 
+Developed at Spotify 2019-2022, Discontinued and handed over to new maintainers January 2023
+
 # Raison D'être :thought_balloon:
 
 We needed a way to describe a combination of audio sources and effects over time as a single, reproducible experience. A description that could be written regardless of the source language, and played back (read) on multiple player implementations. Even more abstractly, a versioned schema and client libraries to read/write said schema as JSON.
